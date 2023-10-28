@@ -1,4 +1,3 @@
-// Player.tsx
 import React from "react";
 import { Player } from "../types";
 
@@ -8,31 +7,39 @@ interface PlayerProps {
 
 const PlayerComponent: React.FC<PlayerProps> = ({ player }) => {
   const {
-    id,
     firstname,
     lastname,
     shortname,
     sex,
     picture: { url: pictureUrl },
-    country: { code: countryCode, picture: { url: countryFlagUrl } },
+    country: { code }, // Access the 'code' property directly from the 'country' object
     stats: { rank, age },
   } = player;
 
-  console.log("Player ID: " + id);
-  console.log("First Name: " + firstname);
-  console.log("Last Name: " + lastname);
-  console.log("Short Name: " + shortname);
-  console.log("Sex: " + sex);
-  console.log("Picture URL: " + pictureUrl);
-  console.log("Country Code: " + countryCode);
-  console.log("Country Flag URL: " + countryFlagUrl);
-  console.log("Rank: " + rank);
-  console.log("Age: " + age);
-  console.log("----------");
   return (
-    <h2>
-      {player.firstname} {player.lastname}
-    </h2>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+      <img src={pictureUrl} alt={`${firstname} ${lastname}`} className="w-full" />
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">
+          {firstname} {lastname}
+        </div>
+        <p className="text-gray-700 text-base">
+          Short Name: {shortname}
+        </p>
+        <p className="text-gray-700 text-base">
+          Sex: {sex}
+        </p>
+        <p className="text-gray-700 text-base">
+          Country Code: {code}
+        </p>
+        <p className="text-gray-700 text-base">
+          Rank: {rank}
+        </p>
+        <p className="text-gray-700 text-base">
+          Age: {age}
+        </p>
+      </div>
+    </div>
   );
 };
 
