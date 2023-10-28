@@ -45,7 +45,9 @@ console.log("🚀 ~ file: App.tsx:34 ~ client:", client)
 function App() {
   return (
     <ApolloProvider client={client}>
-     <Players/>
+      <div className="border border-red-500 border-2">
+      <Players/>
+      </div>
     </ApolloProvider>
 
   );

@@ -14,7 +14,7 @@ export default function Players() {
     }
   }, [data]);
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
       {players?.map((player) => {
         return (
           <PlayerComponent key={player.id} player={player} />
