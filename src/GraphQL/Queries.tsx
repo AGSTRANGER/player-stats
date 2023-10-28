@@ -6,6 +6,21 @@ export const LOAD_PLAYERS = gql`
       id
       firstname
       lastname
+      shortname
+      sex
+      picture {
+        url
+      }
+      country {
+        code
+        picture {
+          url
+        }
+      }
+      stats {
+        rank
+        age
+    }
     }
   }
 `;

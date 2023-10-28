@@ -11,6 +11,7 @@ export default function Players() {
   useEffect(() => {
     if (data) {
       const { players } = data;
+      console.log("🚀 ~ file: Players.tsx:14 ~ useEffect ~ players:", players)
       setPlayers(players);
     }
   }, [data]);
