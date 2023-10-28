@@ -1,4 +1,3 @@
-// helpers.ts
 import { Player, Match } from "../types";
 
 export function calculateTotalPlayTime(player: Player, matches: Match[]): string {
@@ -16,4 +15,8 @@ export function calculateTotalPlayTime(player: Player, matches: Match[]): string
   const minutes = Math.floor((totalDuration % 3600000) / 60000);
   console.log("🚀 ~ file: player_helpers.ts:19 ~ calculateTotalPlayTime ~ `${hours} hours ${minutes} minutes`:", `${hours} hours ${minutes} minutes`)
   return `${hours} hours ${minutes} minutes`;
+}
+
+export function getGamesWonByPlayer(player: Player, matches: Match[]): Match[] {
+  return matches.filter((match) => match.winner.id === player.id);
 }

@@ -27,14 +27,15 @@ export const LOAD_PLAYERS = gql`
 
 export const LOAD_MATCHES = gql`
   query GetMatches {
-    matches {
+ 		matches {
       id
       startTime
       endTime
+      winner {
+        id
+      }
       players {
         id
-        firstname
-        lastname
       }
     }
   }

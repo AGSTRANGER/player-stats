@@ -25,5 +25,6 @@ export type Match = {
   startTime: string;
   endTime: string;
   players: Player[];
+  winner: Player;
 };
 

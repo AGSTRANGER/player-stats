@@ -1,11 +1,16 @@
 import React from "react";
-import { Player } from "../types";
+import { Player ,Match} from "../types";
+import { getGamesWonByPlayer } from "../helpers/player_helpers";
 
 interface PlayerProps {
   player: Player;
+  matches: Match[];
+  onClick: () => void;
 }
 
-const PlayerComponent: React.FC<PlayerProps> = ({ player }) => {
+const PlayerComponent: React.FC<PlayerProps> = ({ player, matches,onClick }) => {
+  const gamesWon = getGamesWonByPlayer(player, matches);
+
   const {
     firstname,
     lastname,
@@ -19,7 +24,7 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player }) => {
   console.log("🚀 ~ file: Player.tsx:18 ~ player:", player)
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4" onClick={onClick}>
       <img
         src={pictureUrl}
         alt={`${firstname} ${lastname}`}
