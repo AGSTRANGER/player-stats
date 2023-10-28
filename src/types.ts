@@ -17,8 +17,7 @@ export type Player = {
     rank: number;
     age: number;
   };
-    // Add other player fields here
-    totalPlayTime: string; // Add the total play time field
+  totalPlayTime: string; 
 };
 
 export type Match = {

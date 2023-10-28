@@ -1,35 +1,9 @@
-// import { useEffect, useState } from "react";
-// import { useQuery } from "@apollo/client";
-// import { LOAD_PLAYERS } from "../GraphQL/Queries";
-// import { Player } from "../types";
-// import PlayerComponent from "./Player";
-
-// export default function Players() {
-//   const [players, setPlayers] = useState<Player[]>([]);
-//   const { error, loading, data } = useQuery<{ players: Player[] }>(LOAD_PLAYERS);
-//   useEffect(() => {
-//     if (data) {
-//       const { players } = data;
-//       setPlayers(players);
-//     }
-//   }, [data]);
-//   return (
-//     <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
-//       {players?.map((player) => {
-//         return (
-//           <PlayerComponent key={player.id} player={player} />
-//         );
-//       })}
-//     </div>
-//   );
-// }
-
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { LOAD_PLAYERS, LOAD_MATCHES } from "../GraphQL/Queries";
 import { Player,} from "../types";
 import PlayerComponent from "./Player";
-import { calculateTotalPlayTime } from "../helpers/helper";
+import { calculateTotalPlayTime } from "../helpers/player_helpers";
 
 export default function Players() {
   const [players, setPlayers] = useState<Player[]>([]);

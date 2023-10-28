@@ -14,5 +14,6 @@ export function calculateTotalPlayTime(player: Player, matches: Match[]): string
   // Convert the total duration to a human-readable format (e.g., hours and minutes)
   const hours = Math.floor(totalDuration / 3600000);
   const minutes = Math.floor((totalDuration % 3600000) / 60000);
+  console.log("🚀 ~ file: player_helpers.ts:19 ~ calculateTotalPlayTime ~ `${hours} hours ${minutes} minutes`:", `${hours} hours ${minutes} minutes`)
   return `${hours} hours ${minutes} minutes`;
 }
