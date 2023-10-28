@@ -1,5 +1,5 @@
 import React from "react";
-import { Player ,Match} from "../../types";
+import { Player, Match } from "../../types";
 import { getGamesWonByPlayer } from "../../helpers/player_helpers";
 
 interface PlayerProps {
@@ -8,7 +8,7 @@ interface PlayerProps {
   onClick: () => void;
 }
 
-const PlayerComponent: React.FC<PlayerProps> = ({ player, matches,onClick }) => {
+const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) => {
   const gamesWon = getGamesWonByPlayer(player, matches);
 
   const {
@@ -19,35 +19,31 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, matches,onClick }) => 
     picture: { url: pictureUrl },
     country: { code },
     stats: { rank, age },
-    totalPlayTime
+    totalPlayTime,
   } = player;
-  console.log("🚀 ~ file: Player.tsx:18 ~ player:", player)
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4" onClick={onClick}>
-      <img
-        src={pictureUrl}
-        alt={`${firstname} ${lastname}`}
-        className="w-full h-auto"
-      />
+    <div className="max-w-sm rounded-lg overflow-hidden shadow-md m-4 hover:shadow-lg cursor-pointer" onClick={onClick}>
+      <img src={pictureUrl} alt={`${firstname} ${lastname}`} className="w-full h-auto" />
+
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">
+        <div className="font-bold text-xl text-indigo-600 mb-2">
           {firstname} {lastname}
         </div>
         <p className="text-gray-700 text-base">
-          <span className="font-bold">Sex:</span> {sex}
+          <span className="font-bold text-teal-600">Sex:</span> {sex}
         </p>
         <p className="text-gray-700 text-base">
-          <span className="font-bold">Country Code:</span> {code}
+          <span className="font-bold text-teal-600">Country Code:</span> {code}
         </p>
         <p className="text-gray-700 text-base">
-          <span className="font-bold">Rank:</span> {rank}
+          <span className="font-bold text-teal-600">Rank:</span> {rank}
         </p>
         <p className="text-gray-700 text-base">
-          <span className="font-bold">Age:</span> {age}
+          <span className="font-bold text-teal-600">Age:</span> {age}
         </p>
         <p className="text-gray-700 text-base">
-          <span className="font-bold">Total play time:</span> {totalPlayTime}
+          <span className="font-bold text-teal-600">Total play time:</span> {totalPlayTime}
         </p>
       </div>
     </div>
