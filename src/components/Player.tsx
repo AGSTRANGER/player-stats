@@ -18,7 +18,7 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player }) => {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
-      <img src={pictureUrl} alt={`${firstname} ${lastname}`} className="w-full" />
+<img src={pictureUrl} alt={`${firstname} ${lastname}`} className="w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-128 lg:h-128" />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">
           {firstname} {lastname}
