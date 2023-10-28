@@ -1,25 +1,60 @@
+// import { useEffect, useState } from "react";
+// import { useQuery } from "@apollo/client";
+// import { LOAD_PLAYERS } from "../GraphQL/Queries";
+// import { Player } from "../types";
+// import PlayerComponent from "./Player";
+
+// export default function Players() {
+//   const [players, setPlayers] = useState<Player[]>([]);
+//   const { error, loading, data } = useQuery<{ players: Player[] }>(LOAD_PLAYERS);
+//   useEffect(() => {
+//     if (data) {
+//       const { players } = data;
+//       setPlayers(players);
+//     }
+//   }, [data]);
+//   return (
+//     <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
+//       {players?.map((player) => {
+//         return (
+//           <PlayerComponent key={player.id} player={player} />
+//         );
+//       })}
+//     </div>
+//   );
+// }
+
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { LOAD_PLAYERS } from "../GraphQL/Queries";
-import { Player } from "../types";
+import { LOAD_PLAYERS, LOAD_MATCHES } from "../GraphQL/Queries";
+import { Player,} from "../types";
 import PlayerComponent from "./Player";
+import { calculateTotalPlayTime } from "../helpers/helper";
 
 export default function Players() {
   const [players, setPlayers] = useState<Player[]>([]);
-  const { error, loading, data } = useQuery<{ players: Player[] }>(LOAD_PLAYERS);
+  const { error: playersError, loading: playersLoading, data: playersData } = useQuery(LOAD_PLAYERS);
+  const { error: matchesError, loading: matchesLoading, data: matchesData } = useQuery(LOAD_MATCHES);
+
   useEffect(() => {
-    if (data) {
-      const { players } = data;
-      setPlayers(players);
+    if (playersData && matchesData) {
+      const { players } = playersData;
+      const { matches } = matchesData;
+      const playersWithPlayTime = players.map((player:Player) => ({
+        ...player,
+        totalPlayTime: calculateTotalPlayTime(player, matches)
+      }));
+      console.log("🚀 ~ file: Players.tsx:48 ~ useEffect ~ playersWithPlayTime:", playersWithPlayTime)
+
+      setPlayers(playersWithPlayTime);
     }
-  }, [data]);
+  }, [playersData, matchesData]);
+
   return (
     <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
-      {players?.map((player) => {
-        return (
-          <PlayerComponent key={player.id} player={player} />
-        );
-      })}
+      {
+        players?.map(player=>(<PlayerComponent key={player.id} player={player} />))
+      }
     </div>
   );
 }

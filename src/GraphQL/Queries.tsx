@@ -24,3 +24,18 @@ export const LOAD_PLAYERS = gql`
     }
   }
 `;
+
+export const LOAD_MATCHES = gql`
+  query GetMatches {
+    matches {
+      id
+      startTime
+      endTime
+      players {
+        id
+        firstname
+        lastname
+      }
+    }
+  }
+`;

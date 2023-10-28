@@ -14,7 +14,9 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player }) => {
     picture: { url: pictureUrl },
     country: { code },
     stats: { rank, age },
+    totalPlayTime
   } = player;
+  console.log("🚀 ~ file: Player.tsx:18 ~ player:", player)
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
@@ -38,6 +40,9 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player }) => {
         </p>
         <p className="text-gray-700 text-base">
           <span className="font-bold">Age:</span> {age}
+        </p>
+        <p className="text-gray-700 text-base">
+          <span className="font-bold">Total play time:</span> {totalPlayTime}
         </p>
       </div>
     </div>
