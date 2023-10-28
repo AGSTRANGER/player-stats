@@ -12,7 +12,7 @@ import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 
 
 import { onError } from "@apollo/client/link/error";
-import Players from "./components/Players";
+import Players from "./components/Players/Players";
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {

@@ -36,6 +36,8 @@ export const LOAD_MATCHES = gql`
       }
       players {
         id
+        firstname
+        lastname
       }
     }
   }

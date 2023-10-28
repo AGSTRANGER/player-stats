@@ -1,6 +1,6 @@
 import React from "react";
-import { Player ,Match} from "../types";
-import { getGamesWonByPlayer } from "../helpers/player_helpers";
+import { Player ,Match} from "../../types";
+import { getGamesWonByPlayer } from "../../helpers/player_helpers";
 
 interface PlayerProps {
   player: Player;
