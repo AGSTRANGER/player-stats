@@ -12,33 +12,31 @@ import Modal from "../common/Modal";
 import Matches from "../Matches/Matches";
 
 export default function Players() {
-  // const [players, setPlayers] = useState<Player[]>([]);
   const dispatch = useDispatch();
   const { players, matches } = useSelector((state:RootState) => state);
-  console.log("🚀 ~ file: Players.tsx:18 ~ Players ~ players:", players)
+
+  // const [players, setPlayers] = useState<Player[]>([]);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
   const [gamesWon, setGamesWon] = useState<Match[]>([]);
   
   const { error: playersError, loading: playersLoading, data: playersData } = useQuery(LOAD_PLAYERS);
-  console.log("🚀 ~ file: Players.tsx:20 ~ Players ~ playersData:", playersData)
-  const response = useQuery(LOAD_PLAYERS);
-  console.log("🚀 ~ file: Players.tsx:21 ~ Players ~ response:", response)
+  console.log("🚀 ~ file: Players.tsx:23 ~ Players ~ playersData:", playersData)
   const { error: matchesError, loading: matchesLoading, data: matchesData } = useQuery(LOAD_MATCHES);
 
   useEffect(() => {
-    console.log("🚀 ~ file: Players.tsx:28 ~ useEffect ~ useEffect:", useEffect)
+    console.log("🚀 ~ file: Players.tsx:27 ~ useEffect ~ useEffect:", )
     if (playersData && matchesData) {
       const { players } = playersData;
-      console.log("🚀 ~ file: Players.tsx:31 ~ useEffect ~ players:", players)
+      console.log("🚀 ~ file: Players.tsx:28 ~ useEffect ~ players:", players)
       const { matches } = matchesData;
-      console.log("🚀 ~ file: Players.tsx:33 ~ useEffect ~ matches:", matches)
       const playersWithPlayTime = players.map((player:Player) => ({
         ...player,
         totalPlayTime: calculateTotalPlayTime(player, matches)
       }));
       console.log("🚀 ~ file: Players.tsx:48 ~ useEffect ~ playersWithPlayTime:", playersWithPlayTime)
-
-      dispatch(setPlayers(playersWithPlayTime));
+      // dispatch(setPlayers(playersWithPlayTime));
+      // dispatch(setMatches(matches));
+      // setPlayers(playersWithPlayTime);
     }
   }, [playersData, matchesData]);
 
@@ -55,7 +53,7 @@ export default function Players() {
   
   return (
     <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
-      {/* {
+      {
         players?.map(player=>(<PlayerComponent key={player.id} player={player} matches={matchesData.matches} onClick={() => handlePlayerClick(player)} />))
       }
        {selectedPlayer && (
@@ -64,7 +62,7 @@ export default function Players() {
         body={<Matches matches={gamesWon} />} 
         onClose={handleCloseModal}
 />
-      )} */}
+      )}
     </div>
   );
 }

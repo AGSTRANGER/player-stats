@@ -14,6 +14,9 @@ import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import { onError } from "@apollo/client/link/error";
 import Players from "./components/Players/Players";
 
+import store from './redux/store'; 
+import { Provider } from 'react-redux';
+
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
     graphQLErrors.map(({ message,}) => {
@@ -45,11 +48,12 @@ console.log("🚀 ~ file: App.tsx:34 ~ client:", client)
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="border border-red-500 border-2">
-      <Players/>
-      </div>
+      <Provider store={store}>
+        <div className="border border-red-500 border-2">
+          <Players />
+        </div>
+      </Provider>
     </ApolloProvider>
-
   );
 }
 
