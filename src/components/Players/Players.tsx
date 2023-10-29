@@ -6,7 +6,7 @@ import Matches from "../Matches/Matches";
 import PlayerComponent from "./Player";
 import { useFetchPlayers } from "../../GraphQL/api/playersApi"
 import { useFetchMatches } from  "../../GraphQL/api/matchesApi"
-import { getGamesWonByPlayer } from "../../helpers/player_helpers";
+import { getGamesWonByPlayer } from "../../helpers/playerHelpers";
 
 export default function Players() {
 

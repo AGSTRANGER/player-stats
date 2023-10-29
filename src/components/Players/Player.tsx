@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector,} from 'react-redux';
 
 import { Player, Match } from "../../types";
-import { getWinsAndLossesByPlayer,calculateTotalPlayTime } from "../../helpers/player_helpers";
+import { getWinsAndLossesByPlayer,calculateTotalPlayTime } from "../../helpers/playerHelpers";
 
 interface PlayerProps {
   player: Player;
