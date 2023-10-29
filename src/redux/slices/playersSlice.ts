@@ -14,8 +14,6 @@ const playersSlice = createSlice({
   initialState,
   reducers: {
     setPlayers: (state, action: PayloadAction<Player[]>) => {
-      console.log("🚀 ~ file: playersSlice.ts:17 ~ action:", action)
-      console.log("🚀 ~ file: playersSlice.ts:17 ~ setPlayers:", setPlayers)
       state.players = action.payload;
     },
   },

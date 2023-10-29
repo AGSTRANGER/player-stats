@@ -2,9 +2,9 @@
 import { useEffect } from "react";
 import { useDispatch ,useSelector} from 'react-redux';
 import { setPlayers } from "../../redux/slices/playersSlice";
-import { LOAD_PLAYERS } from "../../GraphQL/Queries";
+import { LOAD_PLAYERS } from "../../GraphQL/PlayerQueries";
 import { useQuery } from "@apollo/client";
-import { Player, Match } from "../../types";
+import { Player } from "../../types";
 import { calculateTotalPlayTime } from "../../helpers/player_helpers";
 
 export function useFetchPlayers() {

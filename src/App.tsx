@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   ApolloClient,
@@ -42,7 +40,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: link,
 });
-console.log("🚀 ~ file: App.tsx:34 ~ client:", client)
 
 
 function App() {
