@@ -17,6 +17,20 @@ export function calculateTotalPlayTime(player: Player, matches: Match[]): string
   return `${hours} hours ${minutes} minutes`;
 }
 
-export function getGamesWonByPlayer(player: Player, matches: Match[]): Match[] {
-  return matches.filter((match) => match.winner.id === player.id);
+export function getWinsAndLossesByPlayer(player: Player, matches: Match[]): { wins: number; losses: number } {
+  let wins = 0;
+  let losses = 0;
+
+  for (const match of matches) {
+    if (match.winner.id === player.id) {
+      wins++;
+    } else {
+      const isPlayerInMatch = match.players.some((p) => p.id === player.id);
+      if (isPlayerInMatch) {
+        losses++;
+      }
+    }
+  }
+
+  return { wins, losses };
 }

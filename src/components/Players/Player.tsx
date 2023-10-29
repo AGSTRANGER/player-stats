@@ -1,22 +1,24 @@
 import React from "react";
+import { useSelector,} from 'react-redux';
+
 import { Player, Match } from "../../types";
-import { getGamesWonByPlayer,calculateTotalPlayTime } from "../../helpers/player_helpers";
+import { getWinsAndLossesByPlayer,calculateTotalPlayTime } from "../../helpers/player_helpers";
 
 interface PlayerProps {
   player: Player;
-  matches: Match[];
   onClick: () => void;
 }
 
-const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) => {
-  const gamesWon = getGamesWonByPlayer(player, matches);
+const PlayerComponent: React.FC<PlayerProps> = ({ player, onClick }) => {
+  const { matches } = useSelector((state: any) => state.matches);
+
+  const {wins,losses} = getWinsAndLossesByPlayer(player, matches);
   const totalPlayTime = calculateTotalPlayTime(player, matches);
   console.log("🚀 ~ file: Player.tsx:14 ~ totalPlayTime:", totalPlayTime)
 
   const {
     firstname,
     lastname,
-    shortname,
     sex,
     picture: { url: pictureUrl },
     country: { code, picture:{url:countryUrl}},
@@ -59,6 +61,12 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) =>
         </p>
         <p className="text-gray-700 text-base">
           <span className="font-bold text-teal-600">Total play time:</span> {totalPlayTime}
+        </p>
+        <p className="text-gray-700 text-base">
+          <span className="font-bold text-teal-600">Wins:</span> {wins}
+        </p>
+        <p className="text-gray-700 text-base">
+          <span className="font-bold text-teal-600">Losses:</span> {losses}
         </p>
       </div>
     </div>
