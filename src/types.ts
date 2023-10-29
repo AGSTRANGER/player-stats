@@ -20,7 +20,6 @@ export type Player = {
     height: number;
     points: number;
   };
-  totalPlayTime: string; 
 };
 
 export type Match = {

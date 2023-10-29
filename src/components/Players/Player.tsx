@@ -1,6 +1,6 @@
 import React from "react";
 import { Player, Match } from "../../types";
-import { getGamesWonByPlayer } from "../../helpers/player_helpers";
+import { getGamesWonByPlayer,calculateTotalPlayTime } from "../../helpers/player_helpers";
 
 interface PlayerProps {
   player: Player;
@@ -10,6 +10,8 @@ interface PlayerProps {
 
 const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) => {
   const gamesWon = getGamesWonByPlayer(player, matches);
+  const totalPlayTime = calculateTotalPlayTime(player, matches);
+  console.log("🚀 ~ file: Player.tsx:14 ~ totalPlayTime:", totalPlayTime)
 
   const {
     firstname,
@@ -19,7 +21,6 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) =>
     picture: { url: pictureUrl },
     country: { code, picture:{url:countryUrl}},
     stats: { rank, age,weight,height,points },
-    totalPlayTime,
   } = player;
 
     const weightInKilograms = (weight / 1000).toFixed(2);
