@@ -59,10 +59,8 @@ export default function Players() {
   
   return (
     <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
-      { (players.length>0)&&(
-        <div>{players.map((player:Player)=>(<PlayerComponent key={player.id} player={player} matches={matchesData.matches} onClick={() => handlePlayerClick(player)} />))}</div>
-      )
-        
+       {
+        players?.map((player:Player)=>(<PlayerComponent key={player.id} player={player} matches={matchesData.matches} onClick={() => handlePlayerClick(player)} />))
       }
        {selectedPlayer && (
         <Modal
