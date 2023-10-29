@@ -46,9 +46,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Provider store={store}>
-        <div className="border border-red-500 border-2">
           <Players />
-        </div>
       </Provider>
     </ApolloProvider>
   );

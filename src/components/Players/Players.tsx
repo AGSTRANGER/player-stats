@@ -30,7 +30,7 @@ export default function Players() {
   };
 
   return (
-    <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
+    <div className="flex flex-wrap justify-center items-center">
         {
       players?.map((player:Player)=>(<PlayerComponent key={player.id} player={player} matches={matches} onClick={() => handlePlayerClick(player)} />))
     }
