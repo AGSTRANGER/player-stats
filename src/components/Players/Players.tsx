@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useState } from "react";
+import { useSelector,} from 'react-redux';
 import { Player, Match } from "../../types";
-import { calculateTotalPlayTime } from "../../helpers/player_helpers";
 import Modal from "../common/Modal";
 import Matches from "../Matches/Matches";
 import PlayerComponent from "./Player";
@@ -9,15 +8,15 @@ import { useFetchPlayers } from "../../GraphQL/api/playersApi"
 import { useFetchMatches } from  "../../GraphQL/api/matchesApi"
 
 export default function Players() {
-  const state = useSelector((state: any) => state);
-  const { players } = state.players;
-  const { matches } = state.matches;
+
+  useFetchPlayers();
+  useFetchMatches();
+
+  const { players } = useSelector((state: any) => state.players);
+  const { matches } = useSelector((state: any) => state.matches);
 
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
   const [gamesWon, setGamesWon] = useState<Match[]>([]);
-
-  const { playersData, playersError, playersLoading } = useFetchPlayers();
-  const { matchesData, matchesError, matchesLoading } = useFetchMatches();
  
 
   const handlePlayerClick = (player: Player) => {
