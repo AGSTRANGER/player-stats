@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({ title, body, onClose }) => {
         </span>
         <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
           <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <h3 className="text-lg font-medium text-gray-900" id="modal-headline">
+            <h3 className="text-lg font-medium text-gray-900 text-center" id="modal-headline">
               {title}
             </h3>
             <div className="mt-2">
