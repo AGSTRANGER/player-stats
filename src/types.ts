@@ -16,6 +16,9 @@ export type Player = {
   stats: {
     rank: number;
     age: number;
+    weight: number;
+    height: number;
+    points: number;
   };
   totalPlayTime: string; 
 };
@@ -28,7 +31,3 @@ export type Match = {
   winner: Player;
 };
 
-// export type RootState = {
-//   players: Player[];
-//   matches: Match[];
-// };

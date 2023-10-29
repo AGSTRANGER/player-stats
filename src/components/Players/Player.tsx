@@ -18,7 +18,7 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) =>
     sex,
     picture: { url: pictureUrl },
     country: { code },
-    stats: { rank, age },
+    stats: { rank, age,weight,height,points },
     totalPlayTime,
   } = player;
 
@@ -41,6 +41,15 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) =>
         </p>
         <p className="text-gray-700 text-base">
           <span className="font-bold text-teal-600">Age:</span> {age}
+        </p>
+        <p className="text-gray-700 text-base">
+          <span className="font-bold text-teal-600">Weight:</span> {weight}
+        </p>
+        <p className="text-gray-700 text-base">
+          <span className="font-bold text-teal-600">Height:</span> {height}
+        </p>
+        <p className="text-gray-700 text-base">
+          <span className="font-bold text-teal-600">Points:</span> {points}
         </p>
         <p className="text-gray-700 text-base">
           <span className="font-bold text-teal-600">Total play time:</span> {totalPlayTime}

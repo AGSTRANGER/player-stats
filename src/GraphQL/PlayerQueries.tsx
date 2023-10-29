@@ -20,6 +20,9 @@ export const LOAD_PLAYERS = gql`
       stats {
         rank
         age
+        weight
+        height
+        points
     }
     }
   }
