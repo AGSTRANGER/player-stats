@@ -16,6 +16,8 @@ export default function Players() {
   const dispatch = useDispatch();
   const state= useSelector((state:any) => state);
   const {players}=state.players
+  const {matches}=state.matches
+  console.log("🚀 ~ file: Players.tsx:20 ~ Players ~ matches:", matches)
   // const state = useSelector((state:RootState) => state);
   // console.log("🚀 ~ file: Players.tsx:18 ~ Players ~ state:", state)
   console.log("🚀 ~ file: Players.tsx:18 ~ Players ~ players:", players)
@@ -42,12 +44,13 @@ export default function Players() {
       console.log("🚀 ~ file: Players.tsx:48 ~ useEffect ~ playersWithPlayTime:", playersWithPlayTime)
 
       dispatch(setPlayers(playersWithPlayTime));
+      dispatch(setMatches(matches));
     }
   }, [playersData, matchesData]);
 
   const handlePlayerClick = (player: Player) => {
     setSelectedPlayer(player);
-  const gamesWon = matchesData.matches.filter((match:Match) => match.winner.id === player.id);
+  const gamesWon = matches.filter((match:Match) => match.winner.id === player.id);
     setGamesWon(gamesWon)
   };
 
