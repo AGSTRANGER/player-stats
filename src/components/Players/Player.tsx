@@ -17,25 +17,30 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) =>
     shortname,
     sex,
     picture: { url: pictureUrl },
-    country: { code },
+    country: { code, picture:{url:countryUrl}},
     stats: { rank, age,weight,height,points },
     totalPlayTime,
   } = player;
 
+    const weightInKilograms = (weight / 1000).toFixed(2);
+
+    const heightInMeters = (height / 100).toFixed(2);
+  
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-md m-4 hover:shadow-lg cursor-pointer" onClick={onClick}>
       <img src={pictureUrl} alt={`${firstname} ${lastname}`} className="w-full h-auto" />
 
       <div className="px-6 py-4">
         <div className="font-bold text-xl text-indigo-600 mb-2">
+        <div className="font-bold text-xl text-indigo-600 mb-2 flex items-center">
           {firstname} {lastname}
+          <img src={countryUrl} alt={`${code}`} className="w-6 h-6 ml-2" />
+        </div>
         </div>
         <p className="text-gray-700 text-base">
           <span className="font-bold text-teal-600">Sex:</span> {sex}
         </p>
-        <p className="text-gray-700 text-base">
-          <span className="font-bold text-teal-600">Country Code:</span> {code}
-        </p>
+             
         <p className="text-gray-700 text-base">
           <span className="font-bold text-teal-600">Rank:</span> {rank}
         </p>
@@ -43,10 +48,10 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, matches, onClick }) =>
           <span className="font-bold text-teal-600">Age:</span> {age}
         </p>
         <p className="text-gray-700 text-base">
-          <span className="font-bold text-teal-600">Weight:</span> {weight}
+          <span className="font-bold text-teal-600">Weight:</span> {weightInKilograms} kg
         </p>
         <p className="text-gray-700 text-base">
-          <span className="font-bold text-teal-600">Height:</span> {height}
+          <span className="font-bold text-teal-600">Height:</span> {heightInMeters} m
         </p>
         <p className="text-gray-700 text-base">
           <span className="font-bold text-teal-600">Points:</span> {points}
