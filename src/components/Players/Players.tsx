@@ -6,6 +6,7 @@ import Matches from "../Matches/Matches";
 import PlayerComponent from "./Player";
 import { useFetchPlayers } from "../../GraphQL/api/playersApi"
 import { useFetchMatches } from  "../../GraphQL/api/matchesApi"
+import { getGamesWonByPlayer } from "../../helpers/player_helpers";
 
 export default function Players() {
 
@@ -21,7 +22,7 @@ export default function Players() {
 
   const handlePlayerClick = (player: Player) => {
     setSelectedPlayer(player);
-    const gamesWon = matches.filter((match: Match) => match.winner.id === player.id);
+    const gamesWon = getGamesWonByPlayer(player,matches)
     setGamesWon(gamesWon);
   };
 

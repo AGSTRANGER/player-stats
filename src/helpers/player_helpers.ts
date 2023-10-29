@@ -34,3 +34,7 @@ export function getWinsAndLossesByPlayer(player: Player, matches: Match[]): { wi
 
   return { wins, losses };
 }
+
+export function getGamesWonByPlayer(player: Player, matches: Match[]): Match[] {
+  return matches.filter((match) => match.winner.id === player.id);
+}
