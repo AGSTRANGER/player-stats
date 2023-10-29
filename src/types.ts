@@ -28,7 +28,7 @@ export type Match = {
   winner: Player;
 };
 
-export type RootState = {
-  players: Player[];
-  matches: Match[];
-};
+// export type RootState = {
+//   players: Player[];
+//   matches: Match[];
+// };

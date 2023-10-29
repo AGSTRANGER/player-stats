@@ -5,7 +5,7 @@ import { setMatches } from "../../redux/slices/matchesSlice";
 
 import { useQuery } from "@apollo/client";
 import { LOAD_PLAYERS, LOAD_MATCHES } from "../../GraphQL/Queries";
-import { Player,Match,RootState} from "../../types";
+import { Player,Match,} from "../../types";
 import PlayerComponent from "./Player";
 import { calculateTotalPlayTime } from "../../helpers/player_helpers";
 import Modal from "../common/Modal";
@@ -14,7 +14,10 @@ import Matches from "../Matches/Matches";
 export default function Players() {
   // const [players, setPlayers] = useState<Player[]>([]);
   const dispatch = useDispatch();
-  const { players, matches } = useSelector((state:RootState) => state);
+  const state= useSelector((state:any) => state);
+  const {players}=state.players
+  // const state = useSelector((state:RootState) => state);
+  // console.log("🚀 ~ file: Players.tsx:18 ~ Players ~ state:", state)
   console.log("🚀 ~ file: Players.tsx:18 ~ Players ~ players:", players)
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
   const [gamesWon, setGamesWon] = useState<Match[]>([]);
@@ -51,12 +54,15 @@ export default function Players() {
   const handleCloseModal = () => {
     setSelectedPlayer(null);
   };
-
+  console.log("🚀 ~ file: Players.tsx:56 ~ Players ~ players:", players)
+  console.log("🚀 ~ file: Players.tsx:59 ~ Players ~ players.length>0:", players.length>0)
   
   return (
     <div className="flex flex-wrap justify-center items-center border border-gray-500 border-2">
-      {/* {
-        players?.map(player=>(<PlayerComponent key={player.id} player={player} matches={matchesData.matches} onClick={() => handlePlayerClick(player)} />))
+      { (players.length>0)&&(
+        <div>{players.map((player:Player)=>(<PlayerComponent key={player.id} player={player} matches={matchesData.matches} onClick={() => handlePlayerClick(player)} />))}</div>
+      )
+        
       }
        {selectedPlayer && (
         <Modal
@@ -64,7 +70,7 @@ export default function Players() {
         body={<Matches matches={gamesWon} />} 
         onClose={handleCloseModal}
 />
-      )} */}
+      )}
     </div>
   );
 }
