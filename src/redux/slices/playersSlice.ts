@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Player } from '../../types'; 
 
-interface PlayersState {
+export interface PlayersState {
   players: Player[];
 }
 
@@ -9,7 +9,7 @@ const initialState: PlayersState = {
   players: [],
 };
 
-const playersSlice = createSlice({
+export const playersSlice = createSlice({
   name: 'players',
   initialState,
   reducers: {
