@@ -1,6 +1,4 @@
-import { Player } from '../types'; 
-
-export const players: Player[] = [
+export const players = [
   {
     id: '1',
     firstname: 'John',
@@ -46,5 +44,22 @@ export const players: Player[] = [
       height: 165,
       points: 900,
     },
+  },
+];
+
+export const matches = [
+  {
+    id: '1',
+    startTime: '2023-10-30T10:00:00',
+    endTime: '2023-10-30T11:30:00',
+    players: [players[0], players[1]],
+    winner: players[0],
+  },
+  {
+    id: '2',
+    startTime: '2023-10-31T14:00:00',
+    endTime: '2023-10-31T15:30:00',
+    players: [players[1], players[0]], 
+    winner: players[1],
   },
 ];
