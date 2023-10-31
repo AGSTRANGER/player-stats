@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import PlayerComponent from "../../components/Players/Player";
+// Couldn't install this module
 import configureStore from "redux-mock-store";
 
 // Mock your Redux store
@@ -9,7 +10,6 @@ const store = mockStore({
   matches: {
     matches: [],
   },
-  // Add any other parts of your state that are required for the test
 });
 
 describe("Player", () => {
