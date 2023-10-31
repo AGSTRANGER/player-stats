@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector,} from 'react-redux';
-import { Player, Match } from "../../types";
+import { Player, Match } from "../../entities/types";
 import Modal from "../common/Modal";
 import Matches from "../Matches/Matches";
 import PlayerComponent from "./Player";

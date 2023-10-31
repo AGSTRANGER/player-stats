@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Match } from "../../types";
+import { Match } from "../../entities/types";
 import { formatDate } from "../../helpers/dateHelpers";
 
 type MatchProps = {

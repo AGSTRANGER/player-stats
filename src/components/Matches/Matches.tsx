@@ -1,6 +1,6 @@
 // Matches.tsx
 import React from "react";
-import { Match } from "../../types";
+import { Match } from "../../entities/types";
 import MatchComponent from "./Match";
 
 type MatchesProps = {

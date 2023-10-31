@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { setMatches } from "../../redux/slices/matchesSlice";
 import { LOAD_MATCHES } from "../../GraphQL/MatchQueries";
-
 import { useQuery } from "@apollo/client";
 
 export function useFetchMatches() {

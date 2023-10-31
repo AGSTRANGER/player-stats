@@ -1,7 +1,7 @@
 // matchesSlice.ts
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Match } from '../../types'; // Import your Match type
+import { Match } from '../../entities/types'; // Import your Match type
 
 interface MatchesState {
   matches: Match[];
