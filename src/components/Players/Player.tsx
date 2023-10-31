@@ -14,7 +14,6 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, onClick }) => {
 
   const {wins,losses} = getWinsAndLossesByPlayer(player, matches);
   const totalPlayTime = calculateTotalPlayTime(player, matches);
-  console.log("🚀 ~ file: Player.tsx:14 ~ totalPlayTime:", totalPlayTime)
 
   const {
     firstname,
