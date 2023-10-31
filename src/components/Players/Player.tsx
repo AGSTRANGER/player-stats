@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector,} from 'react-redux';
 
-import { Player, Match } from "../../types";
+import { Player,  } from "../../types";
 import { getWinsAndLossesByPlayer,calculateTotalPlayTime } from "../../helpers/playerHelpers";
 
 interface PlayerProps {
@@ -29,7 +29,7 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, onClick }) => {
     const heightInMeters = (height / 100).toFixed(2);
   
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-md m-4 hover:shadow-lg cursor-pointer" onClick={onClick}>
+    <div className="player max-w-sm rounded-lg overflow-hidden shadow-md m-4 hover:shadow-lg cursor-pointer" onClick={onClick}>
       <img src={pictureUrl} alt={`${firstname} ${lastname}`} className="w-full h-auto" />
 
       <div className="px-6 py-4">

@@ -1,4 +1,3 @@
-// matchesApi.ts
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { setMatches } from "../../redux/slices/matchesSlice";
