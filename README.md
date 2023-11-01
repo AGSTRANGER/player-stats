@@ -5,14 +5,14 @@ This web application displays player statistics side by side, including total ti
 ## Table of Contents
 
 1. [Screenshots](#screenshots)
-2. [Prerequisites](#prerequisites)
-3. [Installation](#installation)
-4. [Running the Application](#running-the-application)
-5. [Testing](#testing)
-6. [Folder Structure](#folder-structure)
-7. [GraphQL Endpoint](#graphql-endpoint)
-8. [Data Formatting](#data-formatting)
-9. [Linting](#linting)
+2. [Tests](#tests)
+3. [Prerequisites](#prerequisites)
+4. [Installation](#installation)
+5. [Running the Application](#running-the-application)
+6. [Testing](#testing)
+7. [Folder Structure](#folder-structure)
+8. [GraphQL Endpoint](#graphql-endpoint)
+9. [Data Formatting](#data-formatting)
 
 ## Screenshots
 
@@ -23,8 +23,47 @@ Here are some screenshots of the Player Stats Web Application in action:
 ![Screenshot 3](screenshots/screenshot3.png)
 ![Screenshot 4](screenshots/screenshot4.png)
 ![Screenshot 5](screenshots/screenshot5.png)
+
+Here are some screenshots of unit/integration/e2e tests:
+
 ![Screenshot 6](screenshots/screenshot6.png)
 ![Screenshot 7](screenshots/screenshot7.png)
+
+## Tests
+
+### Unit Tests (Player.test.js)
+
+This suite focuses on testing the individual components and helper functions within the Players component. It ensures that each component renders correctly and that the helper functions perform as expected.
+
+- `should render player component without errors`: Verifies that the Player component renders without errors and checks various attributes within the component.
+
+### Integration Tests (Players.test.js)
+
+Integration tests check how different components interact with each other within the Players component. These tests are responsible for making sure that the component as a whole works as expected when its parts are combined.
+
+- `renders players without error`: Checks if Player components are rendered correctly, ensuring the presence of specific attributes. Also, it verifies that the modal opens when clicking on a player.
+
+### Unit Tests for Helper Functions (playerHelpers.test.js)
+
+This suite tests the utility functions responsible for calculating playtime, wins, and losses.
+
+- `calculateTotalPlayTime calculates correctly`: Verifies that the `calculateTotalPlayTime` function calculates the total playtime correctly.
+
+- `getWinsAndLossesByPlayer calculates correctly`: Checks if the `getWinsAndLossesByPlayer` function correctly calculates the number of wins and losses.
+
+- `getGamesWonByPlayer returns correct matches`: Ensures that the `getGamesWonByPlayer` function returns the correct matches won by a player.
+
+### Redux Reducer Tests (playersSlice.test.js)
+
+These tests focus on the Redux store and the associated reducer for the Players component.
+
+- `should set players`: Verifies that the Redux action `setPlayers` correctly sets the players in the store.
+
+### End-to-End Tests (matchesWon.cy.js)
+
+End-to-end tests ensure that the Players component works as expected from a user's perspective. It simulates user interactions and checks if the UI behaves correctly.
+
+- `Opens modal when a player is clicked`: Checks if clicking on a player opens a modal and verifies the content within the modal.
 
 ## Prerequisites
 
