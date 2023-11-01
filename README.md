@@ -68,6 +68,7 @@ End-to-end tests ensure that the Players component works as expected from a user
 
 ## Project structure
 
+```plaintext
 .
 ├── cypress
 │   ├── e2e
@@ -111,6 +112,7 @@ End-to-end tests ensure that the Players component works as expected from a user
 │   │   │   └── playersSlice.test.js
 │   │   └── sampleData.ts
 │   └── types.ts
+```
 
 ## Prerequisites
 
