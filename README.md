@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# Player Stats Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web application displays player statistics side by side, including total time played in matches, and allows users to view detailed information about winning games for each player. It is built using React, TypeScript, Redux Toolkit for state management, Tailwind CSS for styling, and consumes data from a GraphQL server.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Prerequisites](#prerequisites)
+2. [Installation](#installation)
+3. [Running the Application](#running-the-application)
+4. [Testing](#testing)
+5. [Folder Structure](#folder-structure)
+6. [GraphQL Endpoint](#graphql-endpoint)
+7. [Data Formatting](#data-formatting)
+8. [Linting](#linting)
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before you begin, ensure you have the following prerequisites installed on your system:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Node.js and npm - You can download them [here](https://nodejs.org/).
+- Git - You can download it [here](https://git-scm.com/).
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository to your local machine using Git:
 
-### `npm run build`
+### git clone <repository_url>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Change into the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### cd <project_directory>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the project dependencies:
 
-### `npm run eject`
+### npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Running the Application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To start the application, run the following command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The application will be accessible in your browser at `http://localhost:3000`.
 
-## Learn More
+## Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project includes both unit tests and end-to-end (e2e) tests. To run the tests, you can use the following commands:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- To run unit tests:
+
+### npm test
+
+- To run end-to-end tests (using Cypress):
+
+### npm run e2e
+
+Make sure you have Cypress installed globally or locally in your project before running the e2e tests.
+
+## Folder Structure
+
+The project is organized into the following main directories:
+
+- `src`: Contains the source code for the application.
+- `cypress`: Contains end-to-end tests.
+- `tests`: Contains unit tests.
+
+## GraphQL Endpoint
+
+This application consumes data from a GraphQL server. The GraphQL API queries are defined in the `src/GraphQL` directory, specifically in `MatchQueries.tsx` and `PlayerQueries.tsx`.
+
+## Data Formatting
+
+- Weight is displayed in kilograms.
+- Height is displayed in meters.
+- Total wins and losses are displayed separately.
+
+## Linting
+
+This project uses linting to maintain code quality. Make sure to follow the linting rules to keep the code clean and consistent.
+
+Feel free to reach out if you have any questions or encounter issues while running the application.
+
+---

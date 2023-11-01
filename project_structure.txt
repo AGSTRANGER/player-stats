@@ -1,0 +1,66 @@
+.
+├── cypress
+│   ├── e2e
+│   │   └── matchesWon.cy.js
+│   └── support
+│       ├── commands.ts
+│       └── e2e.ts
+├── cypress.config.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── project_structure.txt
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── README.md
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── components
+│   │   ├── common
+│   │   │   └── Modal.tsx
+│   │   ├── Matches
+│   │   │   ├── Matches.tsx
+│   │   │   └── Match.tsx
+│   │   └── Players
+│   │       ├── Players.tsx
+│   │       └── Player.tsx
+│   ├── GraphQL
+│   │   ├── api
+│   │   │   ├── matchesApi.ts
+│   │   │   └── playersApi.ts
+│   │   ├── MatchQueries.tsx
+│   │   └── PlayerQueries.tsx
+│   ├── helpers
+│   │   ├── dateHelpers.ts
+│   │   └── playerHelpers.ts
+│   ├── index.css
+│   ├── index.tsx
+│   ├── logo.svg
+│   ├── react-app-env.d.ts
+│   ├── redux
+│   │   ├── slices
+│   │   │   ├── matchesSlice.ts
+│   │   │   └── playersSlice.ts
+│   │   └── store.ts
+│   ├── reportWebVitals.ts
+│   ├── setupTests.ts
+│   ├── tests
+│   │   ├── components
+│   │   │   ├── Players.test.js
+│   │   │   └── Player.test.js
+│   │   ├── helpers
+│   │   │   └── playerHelpers.test.js
+│   │   ├── redux
+│   │   │   └── playersSlice.test.js
+│   │   └── sampleData.ts
+│   └── types.ts
+├── tailwind.config.js
+└── tsconfig.json
+
+18 directories, 45 files
