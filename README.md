@@ -6,13 +6,14 @@ This web application displays player statistics side by side, including total ti
 
 1. [Screenshots](#screenshots)
 2. [Tests](#tests)
-3. [Prerequisites](#prerequisites)
-4. [Installation](#installation)
-5. [Running the Application](#running-the-application)
-6. [Testing](#testing)
-7. [Folder Structure](#folder-structure)
-8. [GraphQL Endpoint](#graphql-endpoint)
-9. [Data Formatting](#data-formatting)
+3. [Project structure](#project-structure)
+4. [Prerequisites](#prerequisites)
+5. [Installation](#installation)
+6. [Running the Application](#running-the-application)
+7. [Testing](#testing)
+8. [Folder Structure](#folder-structure)
+9. [GraphQL Endpoint](#graphql-endpoint)
+10. [Data Formatting](#data-formatting)
 
 ## Screenshots
 
@@ -64,6 +65,52 @@ These tests focus on the Redux store and the associated reducer for the Players 
 End-to-end tests ensure that the Players component works as expected from a user's perspective. It simulates user interactions and checks if the UI behaves correctly.
 
 - `Opens modal when a player is clicked`: Checks if clicking on a player opens a modal and verifies the content within the modal.
+
+## Project structure
+
+.
+├── cypress
+│   ├── e2e
+│     └── matchesWon.cy.js
+├── package.json
+├── public
+├── README.md
+├── screenshots
+├── src
+│   ├── App.tsx
+│   ├── components
+│   │   ├── common
+│   │   │   └── Modal.tsx
+│   │   ├── Matches
+│   │   │   ├── Matches.tsx
+│   │   │   └── Match.tsx
+│   │   └── Players
+│   │   ├── Players.tsx
+│   │   └── Player.tsx
+│   ├── GraphQL
+│   │   ├── api
+│   │   │   ├── matchesApi.ts
+│   │   │   └── playersApi.ts
+│   │   ├── MatchQueries.tsx
+│   │   └── PlayerQueries.tsx
+│   ├── helpers
+│   │   ├── dateHelpers.ts
+│   │   └── playerHelpers.ts
+│   ├── redux
+│   │   ├── slices
+│   │   │   ├── matchesSlice.ts
+│   │   │   └── playersSlice.ts
+│   │   └── store.ts
+│   ├── tests
+│   │   ├── components
+│   │   │   ├── Players.test.js
+│   │   │   └── Player.test.js
+│   │   ├── helpers
+│   │   │   └── playerHelpers.test.js
+│   │   ├── redux
+│   │   │   └── playersSlice.test.js
+│   │   └── sampleData.ts
+│   └── types.ts
 
 ## Prerequisites
 
