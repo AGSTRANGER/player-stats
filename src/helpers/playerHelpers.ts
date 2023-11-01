@@ -1,4 +1,4 @@
-import { Player, Match } from "../entities/types";
+import { Player, Match } from "../types";
 
 export function calculateTotalPlayTime(player: Player, matches: Match[]): string {
   const playerMatches = matches.filter(match => match.players.some(p => p.id === player.id));
