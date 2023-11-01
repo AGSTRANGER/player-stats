@@ -4,14 +4,25 @@ This web application displays player statistics side by side, including total ti
 
 ## Table of Contents
 
-1. [Prerequisites](#prerequisites)
-2. [Installation](#installation)
-3. [Running the Application](#running-the-application)
-4. [Testing](#testing)
-5. [Folder Structure](#folder-structure)
-6. [GraphQL Endpoint](#graphql-endpoint)
-7. [Data Formatting](#data-formatting)
-8. [Linting](#linting)
+1. [Screenshots](#screenshots)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+4. [Running the Application](#running-the-application)
+5. [Testing](#testing)
+6. [Folder Structure](#folder-structure)
+7. [GraphQL Endpoint](#graphql-endpoint)
+8. [Data Formatting](#data-formatting)
+9. [Linting](#linting)
+
+## Screenshots
+
+Here are some screenshots of the Player Stats Web Application in action:
+
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 3](screenshots/screenshot2.png)
+![Screenshot 4](screenshots/screenshot2.png)
+![Screenshot 5](screenshots/screenshot2.png)
 
 ## Prerequisites
 
@@ -73,10 +84,6 @@ This application consumes data from a GraphQL server. The GraphQL API queries ar
 - Weight is displayed in kilograms.
 - Height is displayed in meters.
 - Total wins and losses are displayed separately.
-
-## Linting
-
-This project uses linting to maintain code quality. Make sure to follow the linting rules to keep the code clean and consistent.
 
 Feel free to reach out if you have any questions or encounter issues while running the application.
 
