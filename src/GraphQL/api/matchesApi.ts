@@ -3,6 +3,11 @@ import { useDispatch } from "react-redux";
 import { setMatches } from "../../redux/slices/matchesSlice";
 import { LOAD_MATCHES } from "../../GraphQL/MatchQueries";
 import { useQuery } from "@apollo/client";
+import { Match } from "../../types";
+
+type MatchesData = {
+  matches: Match[];
+};
 
 export function useFetchMatches() {
   const dispatch = useDispatch();
@@ -11,7 +16,7 @@ export function useFetchMatches() {
     error: matchesError,
     loading: matchesLoading,
     data: matchesData,
-  } = useQuery(LOAD_MATCHES);
+  } = useQuery<MatchesData>(LOAD_MATCHES);
 
   useEffect(() => {
     if (matchesData) {

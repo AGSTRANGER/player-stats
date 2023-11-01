@@ -3,15 +3,17 @@ import { useDispatch } from "react-redux";
 import { setPlayers } from "../../redux/slices/playersSlice";
 import { LOAD_PLAYERS } from "../../GraphQL/PlayerQueries";
 import { useQuery } from "@apollo/client";
+import { Player } from "../../types";
+
+type PlayersData = {
+  players: Player[];
+};
 
 export function useFetchPlayers() {
   const dispatch = useDispatch();
 
-  const {
-    error: playersError,
-    loading: playersLoading,
-    data: playersData,
-  } = useQuery(LOAD_PLAYERS);
+  const { loading: playersLoading, data: playersData } =
+    useQuery<PlayersData>(LOAD_PLAYERS);
 
   useEffect(() => {
     if (playersData) {
@@ -22,7 +24,6 @@ export function useFetchPlayers() {
 
   return {
     playersData,
-    playersError,
     playersLoading,
   };
 }
