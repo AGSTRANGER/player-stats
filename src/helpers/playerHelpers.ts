@@ -1,7 +1,12 @@
 import { Player, Match } from "../types";
 
-export function calculateTotalPlayTime(player: Player, matches: Match[]): string {
-  const playerMatches = matches.filter(match => match.players.some(p => p.id === player.id));
+export function calculateTotalPlayTime(
+  player: Player,
+  matches: Match[],
+): string {
+  const playerMatches = matches.filter((match) =>
+    match.players.some((p) => p.id === player.id),
+  );
 
   const totalDuration = playerMatches.reduce((total, match) => {
     const startTime = new Date(match.startTime);
@@ -16,7 +21,10 @@ export function calculateTotalPlayTime(player: Player, matches: Match[]): string
   return `${hours} hours ${minutes} minutes`;
 }
 
-export function getWinsAndLossesByPlayer(player: Player, matches: Match[]): { wins: number; losses: number } {
+export function getWinsAndLossesByPlayer(
+  player: Player,
+  matches: Match[],
+): { wins: number; losses: number } {
   let wins = 0;
   let losses = 0;
 

@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Player } from '../../types'; 
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Player } from "../../types";
 
 export interface PlayersState {
   players: Player[];
@@ -10,7 +10,7 @@ const initialState: PlayersState = {
 };
 
 export const playersSlice = createSlice({
-  name: 'players',
+  name: "players",
   initialState,
   reducers: {
     setPlayers: (state, action: PayloadAction<Player[]>) => {

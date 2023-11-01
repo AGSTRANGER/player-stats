@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { setMatches } from "../../redux/slices/matchesSlice";
 import { LOAD_MATCHES } from "../../GraphQL/MatchQueries";
 import { useQuery } from "@apollo/client";
@@ -7,8 +7,12 @@ import { useQuery } from "@apollo/client";
 export function useFetchMatches() {
   const dispatch = useDispatch();
 
-  const { error: matchesError, loading: matchesLoading, data: matchesData } = useQuery(LOAD_MATCHES);
- 
+  const {
+    error: matchesError,
+    loading: matchesLoading,
+    data: matchesData,
+  } = useQuery(LOAD_MATCHES);
+
   useEffect(() => {
     if (matchesData) {
       const { matches } = matchesData;
@@ -16,7 +20,5 @@ export function useFetchMatches() {
     }
   }, [matchesData]);
 
-  return { matchesData,
-    matchesError,
-    matchesLoading,};
+  return { matchesData, matchesError, matchesLoading };
 }

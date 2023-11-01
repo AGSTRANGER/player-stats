@@ -62,7 +62,7 @@ The project is organized into the following main directories:
 
 - `src`: Contains the source code for the application.
 - `cypress`: Contains end-to-end tests.
-- `tests`: Contains unit tests.
+- `tests`: Contains unit&integration tests.
 
 ## GraphQL Endpoint
 

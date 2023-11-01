@@ -2,8 +2,8 @@ export type Player = {
   id: string;
   firstname: string;
   lastname: string;
-  shortname: string; 
-  sex: string; 
+  shortname: string;
+  sex: string;
   picture: {
     url: string;
   };
@@ -29,4 +29,3 @@ export type Match = {
   players: Player[];
   winner: Player;
 };
-

@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,16 +8,15 @@ import {
 } from "@apollo/client";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 
-
 import { onError } from "@apollo/client/link/error";
 import Players from "./components/Players/Players";
 
-import store from './redux/store'; 
-import { Provider } from 'react-redux';
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(({ message,}) => {
+    graphQLErrors.map(({ message }) => {
       alert(`Graphql error ${message}`);
     });
   }
@@ -31,7 +30,8 @@ const link = from([
 ]);
 // #TODO
 // Set this only in dev env
-if (true) {  // Adds messages only in a dev environment
+if (true) {
+  // Adds messages only in a dev environment
   loadDevMessages();
   loadErrorMessages();
 }
@@ -41,12 +41,11 @@ const client = new ApolloClient({
   link: link,
 });
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <Provider store={store}>
-          <Players />
+        <Players />
       </Provider>
     </ApolloProvider>
   );

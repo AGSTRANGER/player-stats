@@ -1,7 +1,5 @@
-// matchesSlice.ts
-
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Match } from '../../types'; // Import your Match type
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Match } from "../../types";
 
 interface MatchesState {
   matches: Match[];
@@ -12,7 +10,7 @@ const initialState: MatchesState = {
 };
 
 const matchesSlice = createSlice({
-  name: 'matches',
+  name: "matches",
   initialState,
   reducers: {
     setMatches: (state, action: PayloadAction<Match[]>) => {

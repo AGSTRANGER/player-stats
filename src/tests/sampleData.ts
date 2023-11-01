@@ -1,17 +1,17 @@
 export const players = [
   {
-    id: '1',
-    firstname: 'John',
-    lastname: 'Doe',
-    shortname: 'JD',
-    sex: 'Male',
+    id: "1",
+    firstname: "John",
+    lastname: "Doe",
+    shortname: "JD",
+    sex: "Male",
     picture: {
-      url: 'https://example.com/john_doe.jpg',
+      url: "https://example.com/john_doe.jpg",
     },
     country: {
-      code: 'US',
+      code: "US",
       picture: {
-        url: 'https://example.com/flags/us.jpg',
+        url: "https://example.com/flags/us.jpg",
       },
     },
     stats: {
@@ -23,18 +23,18 @@ export const players = [
     },
   },
   {
-    id: '2',
-    firstname: 'Jane',
-    lastname: 'Smith',
-    shortname: 'JS',
-    sex: 'Female',
+    id: "2",
+    firstname: "Jane",
+    lastname: "Smith",
+    shortname: "JS",
+    sex: "Female",
     picture: {
-      url: 'https://example.com/jane_smith.jpg',
+      url: "https://example.com/jane_smith.jpg",
     },
     country: {
-      code: 'CA',
+      code: "CA",
       picture: {
-        url: 'https://example.com/flags/ca.jpg',
+        url: "https://example.com/flags/ca.jpg",
       },
     },
     stats: {
@@ -49,17 +49,17 @@ export const players = [
 
 export const matches = [
   {
-    id: '1',
-    startTime: '2023-10-30T10:00:00',
-    endTime: '2023-10-30T11:30:00',
+    id: "1",
+    startTime: "2023-10-30T10:00:00",
+    endTime: "2023-10-30T11:30:00",
     players: [players[0], players[1]],
     winner: players[0],
   },
   {
-    id: '2',
-    startTime: '2023-10-31T14:00:00',
-    endTime: '2023-10-31T15:30:00',
-    players: [players[1], players[0]], 
+    id: "2",
+    startTime: "2023-10-31T14:00:00",
+    endTime: "2023-10-31T15:30:00",
+    players: [players[1], players[0]],
     winner: players[1],
   },
 ];

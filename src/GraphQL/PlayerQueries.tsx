@@ -23,7 +23,7 @@ export const LOAD_PLAYERS = gql`
         weight
         height
         points
-    }
+      }
     }
   }
 `;

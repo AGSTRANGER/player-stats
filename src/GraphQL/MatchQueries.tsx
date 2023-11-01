@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const LOAD_MATCHES = gql`
   query GetMatches {
- 		matches {
+    matches {
       id
       startTime
       endTime

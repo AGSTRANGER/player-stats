@@ -47,7 +47,7 @@ it("renders players without error", async () => {
       <Provider store={store}>
         <Players />
       </Provider>
-    </MockedProvider>
+    </MockedProvider>,
   );
 
   // Assertion 1: Check if the player components are rendered
@@ -60,7 +60,7 @@ it("renders players without error", async () => {
 
     // Check for the player picture
     const imageElement = playerComponent.querySelector(
-      `img[src="${pictureUrl}"]`
+      `img[src="${pictureUrl}"]`,
     );
     expect(imageElement).toBeInTheDocument();
 
@@ -70,20 +70,20 @@ it("renders players without error", async () => {
     expect(playerComponent).toHaveTextContent(`Rank: ${player.stats.rank}`);
     expect(playerComponent).toHaveTextContent(`Age: ${player.stats.age}`);
     expect(playerComponent).toHaveTextContent(
-      `Weight: ${(player.stats.weight / 1000).toFixed(2)} kg`
+      `Weight: ${(player.stats.weight / 1000).toFixed(2)} kg`,
     );
     expect(playerComponent).toHaveTextContent(
-      `Height: ${(player.stats.height / 100).toFixed(2)} m`
+      `Height: ${(player.stats.height / 100).toFixed(2)} m`,
     );
     expect(playerComponent).toHaveTextContent(`Points: ${player.stats.points}`);
     expect(playerComponent).toHaveTextContent(
-      `Total play time: ${calculateTotalPlayTime(player, matches)}`
+      `Total play time: ${calculateTotalPlayTime(player, matches)}`,
     );
     expect(playerComponent).toHaveTextContent(
-      `Wins: ${getWinsAndLossesByPlayer(player, matches).wins}`
+      `Wins: ${getWinsAndLossesByPlayer(player, matches).wins}`,
     );
     expect(playerComponent).toHaveTextContent(
-      `Losses: ${getWinsAndLossesByPlayer(player, matches).losses}`
+      `Losses: ${getWinsAndLossesByPlayer(player, matches).losses}`,
     );
   });
 
