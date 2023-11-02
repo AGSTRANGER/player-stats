@@ -37,7 +37,7 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, onClick }) => {
   return (
     <div
       data-testid="player-component"
-      className="player max-w-sm rounded-lg overflow-hidden shadow-md m-4 cursor-pointer bg-blue-100 hover:transform hover:scale-105 hover:transition-transform hover:duration-300"
+      className="player max-w-sm rounded-lg overflow-hidden shadow-md m-4 cursor-pointer bg-blue-100 hover:transform hover:scale-105 hover:transition-transform hover:duration-300 hover:bg-blue-200"
       onClick={onClick}
     >
       <img
