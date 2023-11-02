@@ -12,11 +12,8 @@ type MatchesData = {
 export function useFetchMatches() {
   const dispatch = useDispatch();
 
-  const {
-    error: matchesError,
-    loading: matchesLoading,
-    data: matchesData,
-  } = useQuery<MatchesData>(LOAD_MATCHES);
+  const { loading: matchesLoading, data: matchesData } =
+    useQuery<MatchesData>(LOAD_MATCHES);
 
   useEffect(() => {
     if (matchesData) {
@@ -25,5 +22,5 @@ export function useFetchMatches() {
     }
   }, [matchesData]);
 
-  return { matchesData, matchesError, matchesLoading };
+  return { matchesData, matchesLoading };
 }

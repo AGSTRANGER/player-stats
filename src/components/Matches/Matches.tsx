@@ -10,8 +10,8 @@ type MatchesProps = {
 const Matches: React.FC<MatchesProps> = ({ matches }) => {
   return (
     <div className="matches-list">
-      {matches.map((match) => (
-        <MatchComponent key={match.id} match={match} />
+      {matches.map((match, i) => (
+        <MatchComponent matchNumber={i + 1} key={match.id} match={match} />
       ))}
     </div>
   );
