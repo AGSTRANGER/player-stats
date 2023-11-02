@@ -50,7 +50,11 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, onClick }) => {
         <div className="font-bold text-xl text-indigo-600 mb-2">
           <div className="font-bold text-xl text-indigo-600 mb-2 flex items-center">
             {firstname} {lastname}
-            <img src={countryUrl} alt={`${code}`} className="w-6 h-6 ml-2" />
+            <img
+              src={countryUrl}
+              alt={`${code}`}
+              className="w-6 h-6 ml-2 rounded-full"
+            />
           </div>
         </div>
         <p className="text-gray-700 text-base">
