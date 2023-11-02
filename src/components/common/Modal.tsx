@@ -10,7 +10,7 @@ type ModalProps = {
 const Modal: React.FC<ModalProps> = ({ title, body, onClose }) => {
   return (
     <div className="modal fixed z-10 inset-0 overflow-y-auto">
-      <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0 ">
         <div
           className="fixed inset-0 transition-opacity"
           onClick={onClose}
@@ -30,9 +30,9 @@ const Modal: React.FC<ModalProps> = ({ title, body, onClose }) => {
           aria-modal="true"
           aria-labelledby="modal-headline"
         >
-          <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <div className="px-4 pt-5 pb-4 sm:p-6 sm:pb-4 bg-gray-900">
             <h3
-              className="modal-title text-lg font-medium text-gray-900 text-center"
+              className="modal-title text-lg font-medium text-gray-900 text-center text-white"
               id="modal-headline"
             >
               {title}

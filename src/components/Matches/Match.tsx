@@ -22,7 +22,7 @@ const MatchComponent: React.FC<MatchProps> = ({
   );
 
   return (
-    <div className="bg-yellow-100 p-4 rounded shadow-md mb-4">
+    <div className="bg-yellow-100 p-4 rounded shadow-md mb-4 bg-blue-100">
       <h4 className="text-indigo-600 text-lg font-semibold mb-2">
         Match {matchNumber}: {getDateFromString(match.startTime)}
       </h4>

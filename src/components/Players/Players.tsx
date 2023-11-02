@@ -33,7 +33,7 @@ export default function Players() {
   };
 
   return (
-    <div className="min-h-screen min-w-full flex justify-center items-center">
+    <div className="min-h-screen min-w-full flex justify-center items-center bg-gray-900">
       {players?.map((player: Player) => (
         <PlayerComponent
           key={player.id}
