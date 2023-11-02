@@ -43,7 +43,7 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, onClick }) => {
       <img
         src={pictureUrl}
         alt={`${firstname} ${lastname}`}
-        className="w-auto h-auto"
+        className="w-auto h-auto rounded-full mx-auto pt-2"
       />
 
       <div className="px-6 py-4">
