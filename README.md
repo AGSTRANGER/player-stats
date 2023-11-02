@@ -25,8 +25,8 @@ Here are some screenshots of the Player Stats Web Application in action:
 
 Here are some screenshots of unit/integration/e2e tests:
 
-![Screenshot 6](screenshots/screenshot_6.png)
-![Screenshot 7](screenshots/screenshot_7.png)
+![Screenshot 6](screenshots/screenshot_4.png)
+![Screenshot 7](screenshots/screenshot_5.png)
 
 ## Tests
 
