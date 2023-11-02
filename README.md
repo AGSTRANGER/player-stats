@@ -84,8 +84,8 @@ End-to-end tests ensure that the Players component works as expected from a user
 │   │   │   ├── Matches.tsx
 │   │   │   └── Match.tsx
 │   │   └── Players
-│   │   ├── Players.tsx
-│   │   └── Player.tsx
+│   │   │   ├── Players.tsx
+│   │   │   └── Player.tsx
 │   ├── GraphQL
 │   │   ├── api
 │   │   │   ├── matchesApi.ts
