@@ -1,9 +1,12 @@
-import React from "react";
-import { Match } from "../../types";
+import React, { useState } from "react";
+import { Match, Player } from "../../types";
 import {
   getTimeFromString,
   getDateFromString,
 } from "../../helpers/dateHelpers";
+import { useSelector } from "react-redux";
+import Opponent from "./Opponent";
+import Modal from "../common/Modal";
 
 type MatchProps = {
   match: Match;
@@ -16,10 +19,27 @@ const MatchComponent: React.FC<MatchProps> = ({
   matchNumber,
   selectedPlayerId,
 }) => {
-  // Find the opponent based on the selectedPlayerId
+  const [showOpponentModal, setShowOpponentModal] = useState(false);
+  const { players } = useSelector((state: any) => state.players);
+
   const opponent = match.players.find(
     (player) => player.id !== selectedPlayerId
   );
+  const opponentId = opponent?.id;
+  const opponentData = players.find(
+    (player: Player) => player.id == opponentId
+  );
+  console.log("🚀 ~ file: Match.tsx:33 ~ players:", players);
+
+  console.log("🚀 ~ file: Match.tsx:22 ~ opponent:", opponent);
+  console.log("🚀 ~ file: Match.tsx:33 ~ opponentData:", opponentData);
+
+  const handleOpponentClick = (opponentId: string) => {
+    setShowOpponentModal(true);
+  };
+  const handleCloseModal = () => {
+    setShowOpponentModal(false);
+  };
 
   return (
     <div className="bg-yellow-100 p-4 rounded shadow-md mb-4 bg-blue-100 hover:transform hover:scale-105 hover:transition-transform hover:duration-300">
@@ -37,15 +57,37 @@ const MatchComponent: React.FC<MatchProps> = ({
       <h5 className="text-indigo-600 text-lg font-semibold mt-4 mb-2">
         Opponent:
       </h5>
-      <ul className="list-disc ml-6">
-        {opponent ? (
-          <li key={opponent.id} className="text-gray-600">
-            {opponent.firstname} {opponent.lastname}
-          </li>
+      <div>
+        {opponentData ? (
+          <p
+            key={opponentData.id}
+            className="text-gray-600 flex"
+            onClick={() => handleOpponentClick(opponentData.id)}
+          >
+            {opponentData.firstname} {opponentData.lastname}
+            <img
+              src={opponentData.picture.url}
+              alt={`${opponentData.firstname} ${opponentData.lastname}`}
+              className="w-6 h-6 ml-2 rounded-full"
+            />
+          </p>
         ) : (
-          <li className="text-gray-600">No opponent found</li>
+          <p className="text-gray-600">No opponent found</p>
         )}
-      </ul>
+      </div>
+
+      {/* {showOpponentModal && (
+        <Modal
+          title="Opponent"
+          body={
+            <Opponent
+              opponent={opponentData}
+              onClose={() => setShowOpponentModal(false)}
+            />
+          }
+          onClose={handleCloseModal}
+        />
+      )} */}
     </div>
   );
 };

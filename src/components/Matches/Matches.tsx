@@ -1,4 +1,3 @@
-// Matches.tsx
 import React from "react";
 import { Match } from "../../types";
 import MatchComponent from "./Match";
