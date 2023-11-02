@@ -4,7 +4,7 @@ import { ApolloProvider } from "@apollo/client";
 import Players from "./components/Players/Players";
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import { client } from "./GraphQL/graphql";
+import { client } from "./GraphQL/graphqlSetup";
 
 function App() {
   return (

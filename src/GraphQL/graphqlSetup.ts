@@ -17,7 +17,6 @@ const link = from([
   }),
 ]);
 
-// Set this only in dev env
 if (process.env.NODE_ENV === "development") {
   // Adds messages only in a dev environment
   loadDevMessages();
