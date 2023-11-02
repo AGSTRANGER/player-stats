@@ -37,13 +37,13 @@ const PlayerComponent: React.FC<PlayerProps> = ({ player, onClick }) => {
   return (
     <div
       data-testid="player-component"
-      className="player max-w-sm rounded-lg overflow-hidden shadow-md m-4 hover:shadow-lg cursor-pointer"
+      className="player max-w-sm rounded-lg overflow-hidden shadow-md m-4 hover:shadow-lg cursor-pointer bg-blue-100"
       onClick={onClick}
     >
       <img
         src={pictureUrl}
         alt={`${firstname} ${lastname}`}
-        className="w-full h-auto"
+        className="w-auto h-auto"
       />
 
       <div className="px-6 py-4">
