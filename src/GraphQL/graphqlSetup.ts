@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, HttpLink, from } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
-
+import { databaseEndpoint } from "../config/database";
 const errorLink = onError(({ graphQLErrors }) => {
   if (graphQLErrors) {
     graphQLErrors.map(({ message }) => {
@@ -13,7 +13,7 @@ const errorLink = onError(({ graphQLErrors }) => {
 const link = from([
   errorLink,
   new HttpLink({
-    uri: "https://kf9p4bkih6.execute-api.eu-west-1.amazonaws.com/dev/",
+    uri: databaseEndpoint,
   }),
 ]);
 
