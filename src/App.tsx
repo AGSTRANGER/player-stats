@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import Players from "./components/Players/Players";
