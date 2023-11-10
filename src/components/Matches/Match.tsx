@@ -29,10 +29,7 @@ const MatchComponent: React.FC<MatchProps> = ({
   const opponentData = players.find(
     (player: Player) => player.id == opponentId
   );
-  console.log("🚀 ~ file: Match.tsx:33 ~ players:", players);
-
-  console.log("🚀 ~ file: Match.tsx:22 ~ opponent:", opponent);
-  console.log("🚀 ~ file: Match.tsx:33 ~ opponentData:", opponentData);
+  
 
   const handleOpponentClick = (opponentId: string) => {
     setShowOpponentModal(true);

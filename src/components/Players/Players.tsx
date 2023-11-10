@@ -16,10 +16,7 @@ export default function Players() {
   const { matches } = useSelector((state: any) => state.matches);
 
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
-  console.log(
-    "🚀 ~ file: Players.tsx:19 ~ Players ~ selectedPlayer:",
-    selectedPlayer
-  );
+
   const [gamesWon, setGamesWon] = useState<Match[]>([]);
 
   const handlePlayerClick = (player: Player) => {
