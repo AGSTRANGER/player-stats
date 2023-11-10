@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Match, Player } from "../../types";
 import {
   getTimeFromString,
   getDateFromString,
 } from "../../helpers/dateHelpers";
 import { useSelector } from "react-redux";
-import Opponent from "./Opponent";
-import Modal from "../common/Modal";
 
 type MatchProps = {
   match: Match;
@@ -19,7 +17,6 @@ const MatchComponent: React.FC<MatchProps> = ({
   matchNumber,
   selectedPlayerId,
 }) => {
-  const [showOpponentModal, setShowOpponentModal] = useState(false);
   const { players } = useSelector((state: any) => state.players);
 
   const opponent = match.players.find(
@@ -27,19 +24,11 @@ const MatchComponent: React.FC<MatchProps> = ({
   );
   const opponentId = opponent?.id;
   const opponentData = players.find(
-    (player: Player) => player.id == opponentId
+    (player: Player) => player.id === opponentId
   );
-  
-
-  const handleOpponentClick = (opponentId: string) => {
-    setShowOpponentModal(true);
-  };
-  const handleCloseModal = () => {
-    setShowOpponentModal(false);
-  };
 
   return (
-    <div className="bg-blue-100 p-4 rounded shadow-md mb-4 bg-blue-100 hover:transform hover:scale-105 hover:transition-transform hover:duration-300 hover:bg-blue-200">
+    <div className="bg-blue-100 p-4 rounded shadow-md mb-4hover:transform hover:scale-105 hover:transition-transform hover:duration-300 hover:bg-blue-200">
       <h4 className="text-indigo-600 text-lg font-semibold mb-2">
         Match {matchNumber}: {getDateFromString(match.startTime)}
       </h4>
@@ -56,11 +45,7 @@ const MatchComponent: React.FC<MatchProps> = ({
       </h5>
       <div>
         {opponentData ? (
-          <p
-            key={opponentData.id}
-            className="text-gray-600 flex"
-            onClick={() => handleOpponentClick(opponentData.id)}
-          >
+          <p key={opponentData.id} className="text-gray-600 flex">
             {opponentData.firstname} {opponentData.lastname}
             <img
               src={opponentData.picture.url}
@@ -72,19 +57,6 @@ const MatchComponent: React.FC<MatchProps> = ({
           <p className="text-gray-600">No opponent found</p>
         )}
       </div>
-
-      {/* {showOpponentModal && (
-        <Modal
-          title="Opponent"
-          body={
-            <Opponent
-              opponent={opponentData}
-              onClose={() => setShowOpponentModal(false)}
-            />
-          }
-          onClose={handleCloseModal}
-        />
-      )} */}
     </div>
   );
 };
